@@ -1,7 +1,7 @@
 
 
 request.onload = function(){
-  var url = "http://localhost/sales.json";
+  var url = "http://localhost/gumball/sales.json";
   var request = new XMLHttpRequest();
   request.open("GET", url);
   request.onload = function(){
@@ -11,3 +11,8 @@ request.onload = function(){
   }
 };
 request.send(null);
+
+function updateSales(responseText){
+  var salesDiv = document.getElementById("sales");
+  salesDiv.innerHTML = responseText;
+}
